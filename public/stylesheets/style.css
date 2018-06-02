@@ -19,12 +19,10 @@ img {
   background-color: white;
   color: rgba(255, 0, 0, 0.74)
 }
-
 #pic{
   padding-top: 50%;
   padding-bottom: 50%;
-}
-
+} 
 #pic1 {
   padding-top: 50%;
   padding-bottom: 50%;
@@ -33,9 +31,6 @@ img {
 #pic2 {
   padding-top: 50%;
   padding-bottom: 50%;
- 
-  
-
 }
 
 .carousel-inner  {
@@ -52,20 +47,18 @@ h2 {
 body {
   background-color: #FBFBFB;
 }
-
 img {
-margin-left: 35%;
+  margin-left: 35%;
 }
 #button {
-margin-left: 40%;
-background-color: palevioletred
+  margin-left: 40%;
+  background-color: palevioletred
 }
 #button:hover {
-background-color: white;
-color: palevioletred;
+  background-color: white;
+  color: palevioletred;
 }
 p {
-text-align: center;
-color: deeppink; 
-
+  text-align: center;
+  color: deeppink; 
 }

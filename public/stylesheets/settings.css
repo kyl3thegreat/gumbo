@@ -1,0 +1,37 @@
+/* =========================================== */
+            /* Profile Setting */
+/* =========================================== */
+.accountSettings {
+    width: 100vw;
+    margin: 0;
+}
+.accountSettings > .col-sm-12 {
+    display: flex;
+    border-bottom: 1px solid #b3b3b3;
+    min-height: 80px;
+}
+.accountSettings .card {
+    width: 100%;
+    align-self: center
+  }
+  .accountSettings .card h5 {
+    color: #808080;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px
+  }
+  .accountSettings .card a {
+    float: right;
+    font-size: 12px;
+    line-height: 20px
+  }
+  .accountSettings .card input {
+    margin-top: 5px;
+  }
+  .accountSettings .accountActions a{
+    float: none;
+    margin: 10px 0;
+    display: block;
+    font-size: 14px
+  }
