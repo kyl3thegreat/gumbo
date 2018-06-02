@@ -1,4 +1,22 @@
 
+body {
+  background-color: #FBFBFB;
+}
 b {
-  background-color: beige;
+  background-color: black;
+}
+img {
+margin-left: 35%;
+}
+#button {
+margin-left: 40%;
+background-color: palevioletred
+}
+#button:hover {
+background-color: white;
+color: palevioletred;
+}
+p {
+text-align: center;
+color: deeppink; 
 }
