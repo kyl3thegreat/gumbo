@@ -1,6 +1,30 @@
 /* =========================================== */
             /* Profile Setting */
 /* =========================================== */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.header {
+  background-color: #d3d3d3;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+.header h3{
+  display: inline-block;
+  margin: 0;
+}
+.header .back {
+  float: left;
+  text-align: left;
+  margin-left: 10px;
+}
+.header .done {
+  margin-right: 10px;
+  float: right;
+  text-align: right;
+}
 .accountSettings {
     width: 100vw;
     margin: 0;
@@ -15,6 +39,7 @@
     align-self: center
   }
   .accountSettings .card h5 {
+    width: fit-content;
     color: #808080;
     font-weight: bold;
     display: inline-block;
@@ -23,15 +48,50 @@
   }
   .accountSettings .card a {
     float: right;
+  }
+  .accountSettings .card .sliderAmount {
+    display: inline-block;
+    text-align: right;
+    float: right;
+    width: fit-content;
     font-size: 12px;
-    line-height: 20px
+    line-height: 20px;
+    background: none;
+    border: none;
   }
-  .accountSettings .card input {
-    margin-top: 5px;
-  }
+  .accountSettings .slider {
+    margin-top: 10px;
+}
+.accountSettings .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px 50px;
+  background: #d3d3d3;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.accountSettings .slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px 50px;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, .4);
+  background: #d3d3d3;
+  cursor: pointer;
+}
   .accountSettings .accountActions a{
     float: none;
     margin: 10px 0;
     display: block;
     font-size: 14px
   }
+.genderPref {
+  visibility: visible;
+  opacity: 1;
+}
+.genderPref fieldset {
+  margin-top: 10px;
+  text-align: center;
+}
