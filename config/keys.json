@@ -1,0 +1,10 @@
+
+ {
+   "facebook": {
+        "clientID": 2152959108270246,
+        "clientSecret": "318bb08067077a0fd234b56f553c7e6c"
+    },
+    "session": {
+        "cookieKey": "thehotdogwenttothebartofindhisfriends"
+    }
+}

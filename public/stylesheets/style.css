@@ -1,3 +1,7 @@
+body {
+  background-color: #4ABDAC;
+}
+
 .carousel-indicators .active {
   background-color: white;
 }
@@ -6,9 +10,8 @@
   border: none;
   box-shadow: inset 1px 1px 1px 1px white;   
 }
-
-body {
-  background-color: #4ABDAC;
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
 }
   
 img {
@@ -18,16 +21,17 @@ img {
   width: 70%;
 
 }
-#button {
+#fbButton {
   background-color: #FC4A1A;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150%;
-  width: 50%;
+  width: 200px;
   border: 4px solid #F7B733;
+  color: #ffffff;
+  text-decoration: none
 }
-#button:hover {
+#fbButton:hover {
   background-color: white;
   color: #FC4A1A;
   border: 4px solid #F7B733;
@@ -56,9 +60,6 @@ img {
 }
 
 .carousel-inner  {
-  position: absolute;
-  top: 0;
-  left: 0;
   min-width: 100%;
   height: 600px;
 }
