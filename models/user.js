@@ -5,22 +5,25 @@ module.exports = (sequelize, DataTypes) => {
         },
         name : {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                is: ["^[a-z]+$",'i'],
-                isAlphanumeric: true,
-                len: [1, 144],
-                //msg: "Name must not inclue numbers or special characters, and have a length between 1 - 144 characters"
-            }
+            allowNull: false
+            // validate: {
+            //     is: ["^[a-z]+$",'i'],
+            //     isAlphanumeric: true,
+            //     len: [1, 144],
+            //     msg: "Name must not inclue numbers or special characters, and have a length between 1 - 144 characters"
+            // }
         },
         bio: {
             type: DataTypes.TEXT,
+        },
+        age: {
+            type: DataTypes.INTEGER,
         },
         email: {
             type: DataTypes.STRING,
             validate: {
                 isUnique: true,
-                isEmail: true,
+                isEmail: true
                 //msg: "Email must follow format (foo@bar.com)"
             }
         },
@@ -30,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         photo: {
             type: DataTypes.STRING,
             validate: {
-                isIn: [['.jpg', '.png', '.jpeg']],
+                isIn: [['.jpg', '.png', '.jpeg']]
                 //msg: "Photo must have one of the following ext (.jpg , .png', .jpeg)" 
             }
         }

@@ -24,18 +24,21 @@
 <body>
 
     <div class="top container-fluid bg-1">
-    <a href="/dashboard" class="previous-round"><img src="/images/back.png" width="25" height="25"></a><h4><center>My Profile</center></h4>
+        <a href="/user/dashboard" class="previous-round"><img src="/images/back.png" width="25" height="25"></a>
+        <h4><center>My Profile</center></h4>
+        <a>Edit</a>
     </div>
+    
     <br>
 
     <div class="container">
-            <div class="col-xs-12">
-            <img src="/images/profilepicture.jpg" class="profileimg"></img>
-    </div>
+        <div class="col-xs-12">
+            <img src="<%= user.photo %>" class="profileimg"></img>
+        </div>
     </div>
 
     <div class="bottom container-fluid bg-1 text-center">
-            <div class="profile">Katie, 28<br>
+        <div class="profile"><%= user.name%>, <%= user.age%><br>
             <img src="/images/work.png" class="icon" width="15" height="15" align="bottom"><p id="company">Company, Inc.</p>
             <img src="/images/school.png" class="icon" width="18" height="18"><p id="school">  University of Central Florida</p>
             <img src="/images/location.png" class="icon" width="15" height="15"><p id="location">  4 miles away</p>
@@ -48,7 +51,4 @@
 
 
 </body>
-
 </html>
-
-</body>
