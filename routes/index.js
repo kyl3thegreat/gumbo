@@ -14,3 +14,17 @@ router.get('/settings', function(req, res, next) {
 });
 
 module.exports = router;
+
+/* GET settings page. */
+router.get('/settings', function(req, res, next) {
+  res.render('settings');
+});
+
+module.exports = router;
+
+/* GET dashboard page. */
+router.get('/dashboard', function(req, res, next) {
+  res.render('dashboard');
+});
+
+module.exports = router;
