@@ -2,7 +2,7 @@ console.log('Ready');
 
 
 // Range Slider for the maximum distance
-$( function() {
+$(function() {
     $( ".distanceSlider" ).slider({
       range: "min",
       value: 30,
@@ -16,49 +16,38 @@ $( function() {
 });
     
 // Range Slider for the age range
-$( function() {
-    $( ".ageSlider" ).slider({
-      range: true,
-      min: 18,
-      max: 100,
-      values: [ 24, 34 ],
-      slide: function( event, ui ) {
-        $( "#ageAmount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-      }
-    });
-    $( "#ageAmount" ).val( $( ".ageSlider" ).slider( "values", 0 ) +
-      " - " + $( ".ageSlider" ).slider( "values", 1 ) );
-  } ); 
+$(function() {
+  $( ".ageSlider" ).slider({
+    range: true,
+    min: 18,
+    max: 100,
+    values: [ 24, 34 ],
+    slide: function( event, ui ) {
+      $( "#ageAmount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+    }
+  });
+  $( "#ageAmount" ).val( $( ".ageSlider" ).slider( "values", 0 ) +
+    " - " + $( ".ageSlider" ).slider( "values", 1 ) );
+}); 
 
-  // Gender preference 
-  $('.genderPrefToggle').on('click', (e)=> {
-      console.log(e);
-    $('.genderPref').toggleClass('hidden')
-  })
-  $('.genderPref input[type=radio]').change(function(e) {
-      console.log($(this).val());
-      $('.genderPrefToggle').html($(this).val())
-      
-    // if (this.value == 'allot') {
-    //     alert("Allot Thai Gayo Bhai");
-    // }
-    // else if (this.value == 'transfer') {
-    //     alert("Transfer Thai Gayo");
-    // }
-    });
+// Gender preference 
+$('.genderPrefToggle').on('click', (e)=> {
+    console.log(e);
+  $('.genderPref').toggleClass('hidden')
+})
+$('.genderPref input[type=radio]').change(function(e) {
+    $('.genderPrefToggle').html($(this).val())
 
-  $( function() {
-    $( ".genderPref fieldset input" ).checkboxradio({
-      icon: false
-    });
-  } );
+});
 
+$(function() {
+  $( ".genderPref fieldset input" ).checkboxradio({
+    icon: false
+  });
+});
 
-//   // Logout modal
-//   $('#logoutModal').on('shown.bs.modal', function () {
-//     $('#myInput').trigger('focus')
-//   })
-//   // deleteAccount modal
-//   $('#deleteAccountModal').on('shown.bs.modal', function () {
-//     $('#myInput').trigger('focus')
-//   })
+$( "#saveSettings" ).on('click', () => {
+  // Call ajax 'POST' request on '/users/profile/settings
+    // pass the distance , ageRange , gender as req.body
+      // redirect the user to '/users/profiles'
+})
