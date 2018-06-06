@@ -5,50 +5,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Gumbo</title>
+  <title>Gumbo | Good Food. Good Company </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Henny+Penny" rel="stylesheet">
 </head>
 
 <body>
-  <div>
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
+    <div class="container-fluid">
+        <div class="row"> 
+    <div class="col">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
         <div class="item active">
-          <img id="pic" src="https://tbncdn.freelogodesign.org/cc5d139f-8c17-4c02-850c-4a7fb52a8b2c.png?1528167673460" alt="logo">
-          <div class="carousel-caption">
-
-          </div>
-        </div>
-        <div class="item">
-          <img id="pic1" src="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/MPaEbz-/two-colleagues-enjoying-their-lunch-in-chinese-restaurant-they-eating-noodles-with-chopsticks-and-talking_vwudth_al__S0000.jpg"
-            alt="pic">
-          <div class="carousel-caption">
-            <h2>Gumbo connects us to good food with good company.</h2>
+            <img src="/images/gumboui.png">
           </div>
 
-
-        </div>
-        <div class="item">
-          <img id="pic2" src="https://thumbs.dreamstime.com/b/young-people-eating-sushi-restaurant-asian-47196084.jpg" alt="pic">
-          <div class="carousel-caption">
-            <h2>Gumbo. It's more than a meal.</h2>
-          </div>
-        </div>
+      <div class="item">
+        <img src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
       </div>
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+  
+      <div class="item">
+        <img src="https://images.pexels.com/photos/935960/pexels-photo-935960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+      </div>
+  
+  
     </div>
-    <a id="fbButton" href="/auth/facebook" class="btn btn-social btn-facebook">Sign in with facebook</a>
+  
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+    <a id="fbButton" href="/auth/facebook" class="btn btn-social btn-facebook">Sign in with Facebook</a>
   
 
 
