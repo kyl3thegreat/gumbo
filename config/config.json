@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "root",
-    "port": 8889,
-    "database": "database_development",
+    "port": 3306,
+    "database": "gumbo",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
