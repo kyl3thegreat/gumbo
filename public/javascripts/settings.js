@@ -9,10 +9,10 @@ $(function() {
       min: 1,
       max: 100,
       slide: function( event, ui ) {
-        $( "#distanceAmount" ).val( ui.value + 'mi' );
+        $( "#distance" ).val( ui.value + 'mi' );
       }
     });
-    $( "#distanceAmount" ).val( $( ".distanceSlider" ).slider( "value" ) + 'mi' );
+    $( "#distance" ).val( $( ".distanceSlider" ).slider( "value" ) + 'mi' );
 });
     
 // Range Slider for the age range
@@ -47,6 +47,39 @@ $(function() {
 });
 
 $( "#saveSettings" ).on('click', () => {
+  var distance =  $( ".distanceSlider" ).slider( "value" )
+  var gender = $('#gender').text()
+  // if(gender === "Male"){
+  //   gender = 1
+  // }
+  // if(gender === "Female"){
+  //   gender = 2
+  // }
+  // if(gender === "Both"){
+  //   gender = 3
+  // }
+  var ageRangeMin = $( ".ageSlider" ).slider( "values", 0 )
+  var ageRangeMax = $( ".ageSlider" ).slider( "values", 1 )
+
+  var userPreference = {
+    // locationLat:
+    // locationLng
+    distance: distance,
+    ageRangeMin: ageRangeMin,
+    ageRangeMax: ageRangeMax,
+    gender: parseInt(gender) 
+  }
+
+  console.log(userPreference);
+
+  $.ajax({
+    method: "PUT",
+    url: "/user/profile/settings",
+    data: userPreference
+  })
+  .then(function() {
+      window.location.href = "/user/dashboard";
+  });
   // Call ajax 'POST' request on '/users/profile/settings
     // pass the distance , ageRange , gender as req.body
       // redirect the user to '/users/profiles'

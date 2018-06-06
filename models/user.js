@@ -39,9 +39,11 @@ module.exports = (sequelize, DataTypes) => {
         }
     })
     
-    // User.associate = models => {
-
-    // }
+    User.associate = models => {
+        User.hasOne( models.UserPreference)
+        User.hasOne( models.DinnerPreference)
+        User.hasMany( models.History)
+    }
 
     return User 
 

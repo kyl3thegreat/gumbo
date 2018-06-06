@@ -4,9 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     })
     
     History.associate = models => {
-        History.belongsTo(models.User, {
-            foreignKey: 'user_id'
-        })
+        History.belongsTo(models.User, {foreignKey: 'historyId'})
     }
 
     return History 

@@ -14,11 +14,13 @@ passport.use(new FacebookStrategy({
     clientSecret: keys.facebook.clientSecret,
     callbackURL: "/auth/facebook/redirect"
 }, (accessToken, refreshToken, profile, done) => {
-    console.log(profile);
+    
     
     // passport callback function
     // Check if user already exitsts in our db
-    db.User.findOne({where: {fbId: profile.id}})
+    db.User.findOne({
+            where: {fbId: profile.id},   
+    })
     .then(User => {
         if(User){
             // already have the user
@@ -33,5 +35,4 @@ passport.use(new FacebookStrategy({
         }
     })
 
-    
 }))

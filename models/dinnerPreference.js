@@ -15,9 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     })
     
     DinnerPreference.associate = models => {
-        DinnerPreference.belongsTo(models.User, {
-            foreignKey: 'user_id'
-        })
+        DinnerPreference.belongsTo(models.User, {foreignKey: 'dinnerPreferenceId'})
     }
 
     return DinnerPreference 
