@@ -16,64 +16,26 @@ body {
   background-image: none;
 }
   
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
 
-}
 #fbButton {
-  background-color: #FC4A1A;
+  background-color: #4468b0;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 200px;
-  border: 4px solid #F7B733;
+  height: 40px;
   color: #ffffff;
-  text-decoration: none
+  text-decoration: none;
+margin-top: 20px;
 }
-#fbButton:hover {
-  background-color: white;
-  color: #FC4A1A;
-  border: 4px solid #F7B733;
-
-}
-
-#pic{
-  padding-top: 25%;
-  padding-bottom: auto;
-  margin-left: 6%;
-  width: 100%;
-  height: auto;
-
+.carousel .item {
+  height: 500px;
+  margin: 20px;
 }
 
-#pic1 {
-  padding-top: 50%;
-  padding-bottom: 50%;
-  border-width: 4px;
-
-  
-}
-
-#pic2 {
-  padding-top: 50%;
-  padding-bottom: 50%;
-
-
-}
-
-.carousel-inner  {
-  min-width: 100%;
-  height: 600px;
-}
-
-.container {
-  background-color: aquamarine;
-}
-
-h2 {
-  color: #DFDCE3;
-  text-shadow: none;
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 500px;
 }
