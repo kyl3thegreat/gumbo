@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../models');
 
 // Authentication middleware for fb logi
 const authCheck = (req, res, next) => {
@@ -9,7 +10,15 @@ const authCheck = (req, res, next) => {
   }
   else{
       // if User is logged in
+    db.User.findOne({
+      where: {id: req.user.id},
+      include: [{model:db.UserPreference}, {model:db.DinnerPreference}] 
+    }).then(user => {
+      console.log(user);
+      
+      req.user = user
       next()
+    })
   }
 }
 
@@ -47,8 +56,15 @@ router.get('/profile/settings', authCheck, (req, res, next) => {
 })
 
 // Post the changed user preferences
-router.post('/profile/settings', (req, res, next) => {
-  res.send('User preferences updated')
+router.put('/profile/settings', (req, res, next) => {
+  console.log(req.body);
+  
+  db.UserPreference.update(req.body,
+  {
+    where:{UserId: req.user.id}
+  }).then((userPreference) => {
+    res.json(userPreference)
+  })
 }) 
 
 // Logout the current user

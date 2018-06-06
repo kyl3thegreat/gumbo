@@ -1,24 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
     var UserPreference = sequelize.define("UserPreference", {
-        locationLat : {
+        distance: {
             type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                is: ["^[a-z]+$",'i'],
-                isAlphanumeric: true,
-                len: [1, 144],
-                //msg: "Name must not inclue numbers or special characters, and have a length between 1 - 144 characters"
-            }
-        },
-        locationLng : {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                is: ["^[a-z]+$",'i'],
-                isAlphanumeric: true,
-                len: [1, 144],
-                //msg: "Name must not inclue numbers or special characters, and have a length between 1 - 144 characters"
-            }
+                isNumeric: true
+             }
         },
         ageRangeMin: {
            type: DataTypes.INTEGER,
@@ -45,9 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     })
     
     UserPreference.associate = models => {
-        UserPreference.belongsTo(models.User, {
-            foreignKey: 'user_id'
-        })
+        UserPreference.belongsTo(models.User, {foreignKey: 'userPreferenceId'})
     }
 
     return UserPreference 

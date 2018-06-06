@@ -14,7 +14,7 @@
     <div class="row header">
         <div class="col-sm-12">
             <header>
-                <a href="/user/dashboard" class="back">Back</a>
+                <a href="/user/dashboard " class="back">Back</a>
                 <h3>Settings</h3>
                 <a id="saveSettings" href="#" class="done">Done</a>
             </header>
@@ -38,7 +38,7 @@
                     <div class="col-sm-12">
                         <div>
                             <h5 class="card-title">Maximum Distance</h5>
-                            <input type="text" id="distanceAmount" class="sliderAmount" readonly>
+                            <input type="text" id="distance" class="sliderAmount" readonly>
                         </div>
                         <div class="distanceSlider slider"></div>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="card-body">
                     <div class="col-sm-12">
                         <h5 class="card-title">Gender</h5>
-                        <a href="#" class="genderPrefToggle alert-link">Male and Female</a>
+                        <a href="#" id="gender" class="genderPrefToggle alert-link">Male and Female</a>
                         <div class="genderPref hidden">
                             <fieldset class="">
                                 <label for="radio-1">Male</label>
@@ -58,7 +58,7 @@
                                 <label for="radio-2">Female</label>
                                 <input type="radio" name="radio-2" value="Female" id="radio-2">
                                 <label for="radio-3">Both</label>
-                                <input type="radio" name="radio-3" value="Male and Female" id="radio-3">
+                                <input type="radio" name="radio-3" value="Both" id="radio-3">
                             </fieldset>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
             <div class="card accountActions">
                 <div class="card-body">
                     <div class="col-sm-12">
-                        <a href="#" class="btn btn-outline-danger">Logout</a>
+                        <a href="/auth/logout" class="btn btn-outline-danger">Logout</a>
                     </div>
                     <div class="col-sm-12">
                         <a href="#" class="btn btn-danger">Delete Account</a>
