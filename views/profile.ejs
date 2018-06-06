@@ -19,6 +19,18 @@
     max-height:100%;
     vertical-align: middle;
     }
+
+    button {
+        float: right;
+        background-color: #e84153;
+        margin-top: -10%;
+        border-radius: 5px;
+    }
+
+    .editinput{
+        text-align: left;
+    }
+    
 </style>
 
 <body>
@@ -26,7 +38,7 @@
     <div class="top container-fluid bg-1">
         <a href="/user/dashboard" class="previous-round"><img src="/images/back.png" width="25" height="25"></a>
         <h4><center>My Profile</center></h4>
-        <a>Edit</a>
+        <button id="editsettings">Edit</button>
     </div>
     
     <br>
@@ -46,9 +58,15 @@
         </div>
     </div>
 
+    <div id="settingsForm"></div>
 
 
 
 
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="/javascripts/settingseditform.js"></script>
 </body>
 </html>
