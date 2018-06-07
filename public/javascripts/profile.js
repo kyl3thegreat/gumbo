@@ -21,6 +21,7 @@ $(".top").on("click", '#editsettings', (e)=> {
         $('.gender').append('<div class="form-group"><label class="col-sm-2 col-form-label col-form-label-sm" for="gender">Gender</label><select class="form-control" id="genderInput"><option>Male</option><option>Female</option><option>Both</option></select></div>')
         gender.remove()
         age.html('<div class="form-group"><label class="col-sm-2 col-form-label col-form-label-sm" for="age">Age</label><input type="text" class="form-control" id="ageInput" value="'+ age.text() +'"></div>')
+        $('.bottom ul').append('<li class="photo"><div class="form-group"><label class="col-sm-2 col-form-label col-form-label-sm" for="photo">Change Proifile Pic</label><input type="text" class="form-control" id="photoInput"></div></li>')
 })
 
 $('.top').on('click', '.save', () => {
@@ -31,17 +32,32 @@ $('.top').on('click', '.save', () => {
                 emailInput = $('#emailInput').val().trim(),
                 genderInput = $('#genderInput').val().trim()
                 ageInput = $('#ageInput').val()
+                photoInput = $('#photoInput').val()
 
-        let profileData = {
-                company: companyInput,
-                school: schoolInput,
-                bio: bioInput,
-                email: emailInput,
-                gender: genderInput,
-                age: ageInput
+        let profileData;
+
+        if(photoInput != ''){
+                profileData = {
+                        company: companyInput,
+                        school: schoolInput,
+                        bio: bioInput,
+                        email: emailInput,
+                        gender: genderInput,
+                        age: ageInput,
+                        photo: photoInput
+                }
+        }
+        else {
+                profileData = {
+                        company: companyInput,
+                        school: schoolInput,
+                        bio: bioInput,
+                        email: emailInput,
+                        gender: genderInput,
+                        age: ageInput,
+                }
         }
 
-        console.log(profileData);
 
         // Call to update our data
   $.ajax({

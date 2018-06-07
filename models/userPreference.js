@@ -1,16 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
     var UserPreference = sequelize.define("UserPreference", {
         locationLat: {
-            type: DataTypes.INTEGER,
-            validate: {
-                isNumeric: true
-            }
+            type: DataTypes.FLOAT,
+            // validate: {
+            //     isNumeric: true
+            // }
         },
         locationLng: {
-            type: DataTypes.INTEGER,
-            validate : {
-                isNumeric: true
-            }
+            type: DataTypes.FLOAT,
+            // validate : {
+            //     isNumeric: true
+            // }
         },
         distance: {
             type: DataTypes.INTEGER,
@@ -38,10 +38,6 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
     })
-    
-    UserPreference.associate = models => {
-        UserPreference.belongsTo(models.User, {foreignKey: 'userPreferenceId'})
-    }
 
     return UserPreference 
 

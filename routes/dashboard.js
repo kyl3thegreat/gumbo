@@ -22,12 +22,13 @@ const authCheck = (req, res, next) => {
   }
 }
 
-/* GET Dashboard page */
-router.get('/', (req, res, next) => {
-  res.send('Welcom to Gumbo dashboard')
-});
+// GET the dashboard of the current user
+router.get('/dashboard', authCheck, (req, res, next) => {
+  console.log(req.user);
+  
+  res.render('dashboard', {user: req.user})
 
-
+})
 
 // View the current users profile
 router.get('/viewProfile', function(req, res, next) {
@@ -37,7 +38,13 @@ router.get('/viewProfile', function(req, res, next) {
 
 // User wants to find a new Match
 router.get('/newMatch', (req, res, next) => {
-    res.send('Finding your perfect match')
+    res.render('questionnaire')
+})
+
+router.get('/matches', (req, res, next) => {
+  console.log(req.body);
+  
+  res.send('here are your matches')
 })
 
 // View the current users match history

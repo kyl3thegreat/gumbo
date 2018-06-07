@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         photo: {
             type: DataTypes.STRING,
             validate: {
-                isIn: [['.jpg', '.png', '.jpeg']]
+                //isIn: [['.jpg', '.png', '.jpeg']]
                 //msg: "Photo must have one of the following ext (.jpg , .png', .jpeg)" 
             }
         }
@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
         User.hasOne( models.UserPreference)
         User.hasOne( models.DinnerPreference)
         User.hasMany( models.History)
+        User.hasMany( models.Request)
     }
 
     return User 

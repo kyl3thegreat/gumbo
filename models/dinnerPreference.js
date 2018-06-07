@@ -10,10 +10,6 @@ module.exports = (sequelize, DataTypes) => {
            type: DataTypes.STRING,
         }
     })
-    
-    DinnerPreference.associate = models => {
-        DinnerPreference.belongsTo(models.User, {foreignKey: 'dinnerPreferenceId'})
-    }
 
     return DinnerPreference 
 

@@ -50,7 +50,11 @@
                 <div class="card-body">
                     <div class="col-sm-12">
                         <h5 class="card-title">Gender</h5>
-                        <a href="#" id="gender" class="genderPrefToggle alert-link"><%= user.UserPreference.gender%></a>
+                        <% if(user.UserPreference.gender){%>
+                            <a href="#" id="gender" class="genderPrefToggle alert-link"><%= user.UserPreference.gender%></a>
+                        <%} else {%>
+                            <a href="#" id="gender" class="genderPrefToggle alert-link">Both</a>
+                        <%}%>
                         <div class="genderPref hidden">
                             <fieldset class="">
                                 <label for="radio-1">Male</label>
