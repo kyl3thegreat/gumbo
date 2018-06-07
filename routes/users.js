@@ -22,12 +22,39 @@ const authCheck = (req, res, next) => {
   }
 }
 
+
+
+
 // GET the dashboard of the current user
 router.get('/dashboard', authCheck, (req, res, next) => {
   console.log(req.user);
-  
-  res.render('dashboard', {user: req.user})
+  db.Request.findAll({where:{
+    UserId: req.user.id
+  }})
+  .then((pendingRequests) => {
+    db.Request.findAll({where:{
+      requestId: req.user.id
+    }})
+    .then((newRequests) => {      
+      res.render('dashboard', {user: req.user, pendingRequests: pendingRequests, newRequests: newRequests})
+    })
+  })
 
+})
+
+// User wants to find a new Match
+router.get('/newmatch', (req, res, next) => {
+  res.render('questionnaire')
+})
+
+router.get('/matches', (req, res, next) => {
+  console.log(req.body);
+      
+})
+
+// View the current users match history
+router.get('/history', (req, res, next) => {
+  res.redirect('users/history')
 })
 
 // GET the current users match history
@@ -50,8 +77,6 @@ router.put('/profile/edit', (req, res, next) => {
   .then((userData) => {
     res.json(userData)
   })
-
-
 })
 
 
@@ -68,20 +93,29 @@ router.get('/profile/settings', authCheck, (req, res, next) => {
 router.put('/profile/settings', (req, res, next) => {
   console.log(req.body);
   
-  db.UserPreference.update({
-    distance: req.body.distance,
-    ageRangeMin: req.body.ageRangeMin,
-    ageRangeMax: req.body.ageRangeMax,
-    gender: req.body.gender,
-    UserId: req.user.id, 
-    userPreferenceId: req.user.id
-  },
+  db.UserPreference.update(req.body,
   {
     where:{UserId: req.user.id}
-  }).then((userPreference) => {
-    res.json(userPreference)
+  }).then((UserPreference) => {
+    res.json(UserPreference)
   })
 }) 
+
+router.put('/profile/dinnerPreference', (req, res, next) => {
+  db.DinnerPreference.update({
+    cuisineType: req.body.cuisineType ,
+    pricePoint: req.body.pricePoint,
+    distance: req.body.distance
+  },
+  {
+    where: {UserId: req.user.id}
+  }
+ )
+ .then((dinnerPreference) => {
+   res.json(dinnerPreference)
+ })
+})
+
 
 // Logout the current user
 router.get('/profile/settings/logout', (req, res, next) => {
@@ -93,7 +127,7 @@ router.delete('/profile/settings/delete_account', (req, res, next) => {
   res.send('Your account has been deleted')
 })
 
-// Delete the current users account
+// Get the current users account
 router.get('/profile/data', (req, res, next) => {
   db.User.findById(req.user.id,
     {include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
@@ -101,5 +135,53 @@ router.get('/profile/data', (req, res, next) => {
     res.json(user)
   })
 })
+
+router.get('/findmatch', (req, res, next) => {
+
+ console.log(req.user);
+ 
+
+  // find the user from the db, include 
+  db.User.findById(req.user.id,
+    {include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+    .then(currentUser => {
+      db.User.findAll({include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+      .then(users => {
+        let data = {
+          currentUser: currentUser,
+          users: users
+        }
+        res.json(data)        
+
+      })
+  })
+})
+
+router.get('/matched/with/:userid', (req, res, next) => {
+  db.User.findById(req.params.userid,
+    {include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+    .then(match => {
+      db.User.findById(req.user.id,{include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+      .then(currentUser => {
+        res.render('restaurant', {currentUser, match})
+      })
+  })
+})
+
+router.get('/request/:userid', (req, res, next) => {
+  
+  db.User.findById(req.params.userid).then((match) => {
+    db.Request.create({
+      makingRequest: req.user.name,
+      recievingRequest: match.name,
+      status: false,
+      requestId: match.id,
+      UserId: req.user.id
+    }).then(() => {
+      res.redirect('/user/matched/with/' + req.params.userid)
+    })
+  })
+})
+
 
 module.exports = router;
