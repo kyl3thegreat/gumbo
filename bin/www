@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('gumbo:server');
 var http = require('http');
-var db = require('../models');
+//var db = require('../models');
 
 /**
  * Get port from environment and store in Express.
