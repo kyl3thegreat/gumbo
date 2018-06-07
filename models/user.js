@@ -13,6 +13,12 @@ module.exports = (sequelize, DataTypes) => {
             //     msg: "Name must not inclue numbers or special characters, and have a length between 1 - 144 characters"
             // }
         },
+        company: {
+            type: DataTypes.STRING
+        },
+        school: {
+            type: DataTypes.STRING
+        },
         bio: {
             type: DataTypes.TEXT,
         },
@@ -22,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         email: {
             type: DataTypes.STRING,
             validate: {
-                isUnique: true,
+                // isUnique: true,
                 isEmail: true
                 //msg: "Email must follow format (foo@bar.com)"
             }

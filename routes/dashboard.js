@@ -1,5 +1,26 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../models');
+
+// Authentication middleware for fb logi
+const authCheck = (req, res, next) => {
+  if(!req.user){
+      // if user is not logged in
+      res.redirect('/auth/login')
+  }
+  else{
+      // if User is logged in
+    db.User.findOne({
+      where: {id: req.user.id},
+      include: [{model:db.UserPreference}, {model:db.DinnerPreference}] 
+    }).then(user => {
+      console.log(user)
+      
+      req.user = user
+      next()
+    })
+  }
+}
 
 /* GET Dashboard page */
 router.get('/', (req, res, next) => {

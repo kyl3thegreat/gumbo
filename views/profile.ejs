@@ -13,63 +13,49 @@
 
 </head>
 
-<style>
-    .profileimg {
-        max-width:100%;
-    max-height:100%;
-    vertical-align: middle;
-    }
-
-    #editsettings {
-        float: right;
-        background-color: #e84153;
-        margin-top: -10%;
-        border-radius: 5px;
-    }
-
-   
-
-    #mySearch {
-        margin: 30%;
-        margin-bottom: 50%;
-        margin-top: 1%;
-        text-align: center;
-
-    }
-    
-    #txtField {
-        background-color: #ffffff;
-        text-align: center;
-
-    }
-
-    select {
-        margin-left: 28%;
-    }
-</style>
-
 <body>
 
     <div class="top container-fluid bg-1">
-        <a href="/user/dashboard" class="previous-round"><img src="/images/back.png" width="25" height="25"></a>
+        <a href="/user/dashboard" class="previous-round"><img class="edit" src="/images/back.png" width="25" height="25"></a>
         <h4><center>My Profile</center></h4>
-        <button id="editsettings">Edit</button>
+        <a id="editsettings" class="editSettings"><img class="edit" src="/images/pencil-light.png" alt=""   width="25" height="25"></a>
     </div>
     
     <br>
 
     <div class="container">
-        <div class="col-xs-12">
-            <img src="<%= user.photo %>" class="profileimg"></img>
-        </div>
+        <img src="<%= user.photo %>" class="profileimg"></img>
     </div>
 
-    <div class="bottom container-fluid bg-1 text-center">
-        <div class="profile"><%= user.name%>, <%= user.age%><br>
-            <img src="/images/work.png" class="icon" width="15" height="15" align="bottom"><p id="company">Company, Inc.</p>
-            <img src="/images/school.png" class="icon" width="18" height="18"><p id="school">  University of Central Florida</p>
-            <img src="/images/location.png" class="icon" width="15" height="15"><p id="location">  4 miles away</p>
-        </div>
+    <div class="bottom container">
+        <div class="profile">
+            <h4><%= user.name%>, <span class="age"><%= user.age%></span></h4>
+            <ul>
+                <li class="company">
+                    <img src="/images/work.png" class="icon" width="15" height="15">
+                    <p id="company"><%= user.company %></p>
+                </li>
+                <li class="school">
+                    <img src="/images/school.png" class="icon" width="18" height="18">
+                    <p id="school"><%= user.school %></p>
+                </li>
+                <li class="location">
+                    <img src="/images/location.png" class="icon" width="15" height="15">
+                    <p id="location"><%= user.location %>Orlando, FL</p>
+                </li>
+                <li class="bio">
+                    <!-- <img src="/images/pencil.png" class="icon" width="16" height="16"> -->
+                    <p id="bio"><%= user.bio %></p>
+                </li>
+                <li class="email">
+                    <img src="/images/message.png" class="icon" width="16" height="16">
+                    <p id="email"><%= user.email %></p>
+                </li>
+                <li class="gender">
+                    <img src="/images/gender.png" class="icon" width="16" height="16">
+                    <p id="gender"><%= user.gender %></p>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -78,10 +64,7 @@
 
 
 
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="/javascripts/settingseditform.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="/javascripts/profile.js"></script>
 </body>
 </html>

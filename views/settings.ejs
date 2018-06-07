@@ -38,7 +38,7 @@
                     <div class="col-sm-12">
                         <div>
                             <h5 class="card-title">Maximum Distance</h5>
-                            <input type="text" id="distance" class="sliderAmount" readonly>
+                            <input type="text" id="distance" class="sliderAmount" readonly value="<%= user.UserPreference.distance%>">
                         </div>
                         <div class="distanceSlider slider"></div>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="card-body">
                     <div class="col-sm-12">
                         <h5 class="card-title">Gender</h5>
-                        <a href="#" id="gender" class="genderPrefToggle alert-link">Male and Female</a>
+                        <a href="#" id="gender" class="genderPrefToggle alert-link"><%= user.UserPreference.gender%></a>
                         <div class="genderPref hidden">
                             <fieldset class="">
                                 <label for="radio-1">Male</label>
@@ -71,7 +71,7 @@
                     <div class="col-sm-12">
                         <div>
                             <h5 class="card-title">Age Range</h5>
-                            <input type="text" id="ageAmount" class="sliderAmount" readonly>
+                            <input type="text" id="ageAmount" class="sliderAmount" readonly value="<%= user.UserPreference.ageRangeMin %> - <%= user.UserPreference.ageRangeMax%>">
                         </div>
                         <div class="ageSlider slider"></div>
                     </div>
