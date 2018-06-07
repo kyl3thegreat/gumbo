@@ -1,29 +1,37 @@
 module.exports = (sequelize, DataTypes) => {
     var UserPreference = sequelize.define("UserPreference", {
-        distance: {
+        locationLat: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             validate: {
                 isNumeric: true
-             }
+            }
+        },
+        locationLng: {
+            type: DataTypes.INTEGER,
+            validate : {
+                isNumeric: true
+            }
+        },
+        distance: {
+            type: DataTypes.INTEGER,
+            validate: {
+                isNumeric: true
+            }
         },
         ageRangeMin: {
            type: DataTypes.INTEGER,
-           allowNull: false,
            validate: {
             isNumeric: true, 
            }
         },
         ageRangeMax: {
            type: DataTypes.INTEGER,
-           allowNull: false,
            validate: {
             isNumeric: true, 
            }
         },
         gender: {
            type: DataTypes.STRING,
-            allowNull: false,
             validate: {
                 is: ["^[a-z]+$",'i'],
                 isAlphanumeric: true

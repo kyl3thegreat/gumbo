@@ -30,7 +30,13 @@ passport.use(new FacebookStrategy({
             // if User doesnt exit we will create a new one
             db.User.create({ name: profile.displayName, fbId: profile.id })
             .then(User => {
-                done(null, User)
+                db.DinnerPreference.create({UserId: User.id})
+                .then(DinnerPreference => {
+                    db.UserPreference.create({UserId: User.id})
+                    .then(UserPreference => {
+                        done(null, User)
+                    })
+                })
             })
         }
     })

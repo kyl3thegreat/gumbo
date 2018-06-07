@@ -14,7 +14,7 @@ const authCheck = (req, res, next) => {
       where: {id: req.user.id},
       include: [{model:db.UserPreference}, {model:db.DinnerPreference}] 
     }).then(user => {
-      console.log(user);
+      console.log(user)
       
       req.user = user
       next()
@@ -45,21 +45,37 @@ router.get('/profile/edit', authCheck, (req, res, next) => {
   res.send('Edit your profile')
 })
 
-router.post('/profile/edit', (req, res, next) => {
-  res.send('Changes have been saved')
+router.put('/profile/edit', (req, res, next) => {
+  db.User.update(req.body, {where:{id: req.user.id}})
+  .then((userData) => {
+    res.json(userData)
+  })
+
+
 })
 
 
 // Get the the current users settings
 router.get('/profile/settings', authCheck, (req, res, next) => {
-  res.render('settings', {user: req.user})
+  db.User.findById(req.user.id,
+    {include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+    .then(user => {
+    res.render('settings', {user: req.user})
+  })
 })
 
 // Post the changed user preferences
 router.put('/profile/settings', (req, res, next) => {
   console.log(req.body);
   
-  db.UserPreference.update(req.body,
+  db.UserPreference.update({
+    distance: req.body.distance,
+    ageRangeMin: req.body.ageRangeMin,
+    ageRangeMax: req.body.ageRangeMax,
+    gender: req.body.gender,
+    UserId: req.user.id, 
+    userPreferenceId: req.user.id
+  },
   {
     where:{UserId: req.user.id}
   }).then((userPreference) => {
@@ -73,8 +89,17 @@ router.get('/profile/settings/logout', (req, res, next) => {
 })
 
 // Delete the current users account
-router.get('/profile/settings/delete_account', (req, res, next) => {
+router.delete('/profile/settings/delete_account', (req, res, next) => {
   res.send('Your account has been deleted')
+})
+
+// Delete the current users account
+router.get('/profile/data', (req, res, next) => {
+  db.User.findById(req.user.id,
+    {include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+    .then(user => {
+    res.json(user)
+  })
 })
 
 module.exports = router;
