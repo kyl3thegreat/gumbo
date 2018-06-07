@@ -49,7 +49,7 @@ router.get('/matches', (req, res, next) => {
 
 // View the current users match history
 router.get('/history', (req, res, next) => {
-    res.redirect('users/history')
+    res.redirect('/users/history')
 })
 
 module.exports = router;
