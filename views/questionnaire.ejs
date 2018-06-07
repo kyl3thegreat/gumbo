@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gumbo - Questionanaire</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+    <title>Questionanaire | Gumbo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/questionnaire.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+</head>
 
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    </head>
-
-    <body>
-
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
-                    
-
-                    <div id="subwrapper">
-
-                    <div id="question"></div>             
-                    <div id="response"></div>
-
-                    </div>
-
-                    <button id="Q_sub">Submit</button>
-                    <button id="Q_reset">Reset Form</button>
-
-                </div>
-                <div class="col-md-4">
-                </div>
+<body>
+    <div class="top container-fluid bg-1">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/user/dashboard" class="previous-round">
+                    <img src="/images/back.png" width="25" height="25">
+                </a>
+                <h4>
+                    <center>Questionnaire</center>
+                </h4>
             </div>
         </div>
- 
-        <!-- Link to our Javascript file -->
-        <script src="/javascripts/questionnaire.js"></script>
+    </div>
 
-    </body>
+    <div class="questions">
+        <p class="question">1. What kind of food are you craving?</p>
+        <form class="options">
+            <input class="next" type="button" name="food" value="American">
+            <br>
+            <input class="next" type="button" name="food" value="Pizza">
+            <br>
+            <input class="next" type="button" name="food" value="Asian">
+            <br>
+            <input class="next" type="button" name="food" value="Sandwich">
+            <br>
+            <input class="next" type="button" name="food" value="Italian">
+            <br>
+            <input class="next" type="button" name="food" value="Mexican">
+        </form>
+    </div>
+    <div class="questions">
+            <p class="question">2. How much are you looking to spend?</p>
+        <form class="options">
+            <input class="next" type="button" name="price" value="$">
+            <br>
+            <input class="next" type="button" name="price" value="$$">
+            <br>
+            <input class="next" type="button" name="price" value="$$$">
+            <br>
+            <input class="next" type="button" name="price" value="$$$$">
+        </form>
+    </div>
+    <div class="questions">
+            <p class="question">3. How far are you willing to travel?</p>
+        <form class="options">
+            <input class="next" type="button" name="distance" value="0-5 miles">
+            <br>
+            <input class="next" type="button" name="distance" value="6-10 miles">
+            <br>
+            <input class="next" type="button" name="distance" value="11-20 miles">
+            <br>
+            <input class="next" type="button" name="distance" value="20+ miles">
+        </form>
+
+    </div>
+    <br>
+
+    <!-- Link to our Javascript file -->
+    <script src="/javascripts/questionnaire.js"></script>
+
+</body>
+
 </html>
