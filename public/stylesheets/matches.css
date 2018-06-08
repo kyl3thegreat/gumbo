@@ -66,7 +66,8 @@
             font-size: 25px;
             font-weight: bolder;
             position: absolute;
-            bottom: 0px;
+            bottom: -40px;
+
           }
   
           .buddy {
@@ -81,7 +82,7 @@
             left: 0;
             right: 0;
             margin: auto;
-            margin-top: 120px;
+            margin-top: 100px;
             cursor: hand;  
         }
   
@@ -110,14 +111,16 @@
           background-size: auto 160% !important;
           background-position: center;
           background-repeat: no-repeat;
-          max-height: 90%;
+          max-height: 80%;
           max-width: 90%;
           top: 0;
           bottom: 0;
           left: 0;
           right: 0;
-          margin: auto;
+          margin: 0 auto;
+          margin-top: 20px;
           position: absolute;
+
   
         }
         .like {
@@ -126,10 +129,10 @@
           border: 2px solid green;
           color: green;
           text-transform: uppercase;
-          font-size: 60px;
+          font-size: 30px;
           position: absolute;
-          top: 50px;
-          right: 20px;
+          top: 0px;
+          right: 0px;
           text-shadow: none;
         }
         .dislike {
@@ -138,10 +141,10 @@
           border: 2px solid red;
           color: red;
           text-transform: uppercase;
-          font-size: 60px;
+          font-size: 30px;
           position: absolute;
-          top: 50px;
-          left: 20px;
+          top: 0px;
+          left: -0px;
           text-shadow: none;
         }
   
