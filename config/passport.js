@@ -12,7 +12,7 @@ passport.use(new FacebookStrategy({
     // options for the strategy
     clientID: keys.facebook.clientID,
     clientSecret: keys.facebook.clientSecret,
-    callbackURL: "/auth/facebook/redirect",
+    callbackURL: "https://gumbo-app.herokuapp.com/auth/facebook/redirect",
     //proxy: true
 }, (accessToken, refreshToken, profile, done) => {
     
