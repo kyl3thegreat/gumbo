@@ -31,10 +31,21 @@
             padding-bottom: 3px;
         }
 
-        .img-circle {
+        #thumbnaildiv{
+            position: relative;
             width: 80px;
             height: 80px;
-        }
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 auto;
+          }
+
+          
+          .profilethumbnail{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
 
         a {
             color: #1ea896;
