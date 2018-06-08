@@ -13,7 +13,7 @@ passport.use(new FacebookStrategy({
     clientID: keys.facebook.clientID,
     clientSecret: keys.facebook.clientSecret,
     callbackURL: "/auth/facebook/redirect",
-    proxy: true
+    //proxy: true
 }, (accessToken, refreshToken, profile, done) => {
     
     
