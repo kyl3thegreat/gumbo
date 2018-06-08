@@ -14,7 +14,7 @@
 <body>
 
     <div class="profile-img container-fluid bg-1 text-center">
-        <img src="<%= user.photo %>" class="responsive" alt="<%= user.name %>">
+        <div id="thumbnaildiv"><img src="<%= user.photo %>" class="profilethumbnail" alt="<%= user.name %>"></div>
         <h4>Welcome, <%= user.name %></h4>
     </div>
     <br>
@@ -53,14 +53,14 @@
             <div class="col-6 col-centered">
                 <br>
                 <br>
-                <a href="/user/history">
+                <a href="/notifications">
                     <center>
-                        <img src="/images/history.png" class="icon" alt="history" width="65" height="65">
+                        <img src="/images/notifications.png" class="icon" alt="notifications" width="65" height="65">
                     </center>
                     <br>
 
                     <center>
-                        <p>History</p>
+                        <p>Notifications</p>
                     </center>
                     <br>
                     <br>
@@ -78,27 +78,7 @@
             </div>
         </div>
     </div>
-    <div class="container requests">
-            
-            <div class="row">
-                <h5>Pending Requests <span class="badge badge-light"><%= pendingRequests.length %></span></h5>
-                <% pendingRequests.forEach(request => { %>
-                    <% if(request.dataValues.status == false){ %>
-                        <div class="col">
-                            <h4><%= request.dataValues.recievingRequest %></h4>
-                        </div>
-                        
-                        <div class="col col-lg-2">
-                            <button type="button" class="btn btn-danger">Cancel</button> 
-                        </div>
-                    <% } %>
-                <% }) %>
-            </div>
-                        
-                   
-          
-    </div>
-</div>
+    
 
 
 
@@ -109,3 +89,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+

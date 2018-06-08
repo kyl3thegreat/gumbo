@@ -1,26 +1,35 @@
 /* =========================================== */
             /* Profile Setting */
 /* =========================================== */
+body {
+  background-color: white;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: inline-block;
+    margin: 0;
+}
+
 .hidden {
   visibility: hidden;
   opacity: 0;
 }
-.header {
-  background-color: #d3d3d3;
+
+.top {
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
-  height: 60px;
-  line-height: 60px;
+  background-color: #1ea896;
 }
-.header h3{
-  display: inline-block;
-  margin: 0;
-}
-.header .back {
+
+#goBack {
   float: left;
   text-align: left;
   margin-left: 10px;
 }
-.header .done {
+#saveSettings {
   margin-right: 10px;
   float: right;
   text-align: right;

@@ -18,8 +18,8 @@ router.get('/dashboard', function(req, res, next) {
 });
 
 /* GET history page. */
-router.get('/history', function(req, res, next) {
-  res.render('history');
+router.get('/notifications', function(req, res, next) {
+  res.render('notifications');
 });
 
 /* GET location page. */
