@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../models')
 
 /* GET home page. */
 
@@ -41,5 +42,13 @@ router.get('/profile', function(req, res, next) {
 router.get('/questionnaire', function(req, res, next) {
   res.render('questionnaire');
 });
+
+router.get('/profile/:id', (req, res, next) => {
+  db.User.findById(req.params.id,
+    {include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
+    .then(userProfile => {
+      res.json(userProfile)
+  })
+})
 
 module.exports = router;
