@@ -1,0 +1,44 @@
+.matchContainer {
+    height: 20%;
+}
+.matchContainer h3{
+    font-size: 2.5em;
+    margin: 25px 0;
+    text-align: center;
+}
+.matchContainer .profiles {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center
+}
+.matchContainer .profiles div {
+    justify-content: space-around;
+    margin: 0 45px;
+}
+.matchContainer .profiles img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    box-shadow: 0 3px 18px 1px rgba(0, 0, 0, .5)
+}
+.matchContainer .profiles p {
+    font-weight: 900;
+    margin: 20px 0;
+    font-size: .9em;
+}
+.matchContainer .profiles .you {
+
+}
+.matchContainer .profiles .match {
+
+}
+
+
+
+.matchContainer .restaurant .resName{
+    font-size: 1.5em;
+    font-size: 900;
+}
+.matchContainer .restaurant p{
+    font-size: 14px;
+}

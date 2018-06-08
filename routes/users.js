@@ -169,10 +169,12 @@ router.get('/matched/with/:userid', (req, res, next) => {
     .then(match => {
       db.User.findById(req.user.id,{include: [{model:db.UserPreference}, {model:db.DinnerPreference}]})
       .then(currentUser => {
-        res.render('restaurant', {currentUser, match})
+        res.render('restaurant', {currentUser: currentUser, match: match})
       })
   })
 })
+
+
 
 router.get('/request/:userid', (req, res, next) => {
   

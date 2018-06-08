@@ -2,12 +2,31 @@ $(document).ready(() => {
 
   var locationLat, loactionLng
   
-  var getLocation = navigator.geolocation.getCurrentPosition((postion) =>{ 
-    console.log(postion.coords.latitude)
-    locationLat = postion.coords.latitude
-    console.log(postion.coords.longitude)
-    locationLng = postion.coords.longitude
-  })
+  // var getLocation = navigator.geolocation.getCurrentPosition((postion) =>{ 
+  //   console.log(postion.coords.latitude)
+  //   locationLat = postion.coords.latitude
+  //   console.log(postion.coords.longitude)
+  //   locationLng = postion.coords.longitude
+  // })
+
+  if (navigator.geolocation) {
+    var timeoutInSeconds=1;
+    var geotimeout=setTimeout(function() {
+    },timeoutInSeconds*1000+500); //plus 500 ms to allow the API to timeout normally
+    navigator.geolocation.getCurrentPosition(function (position) {
+        clearTimeout(geotimeout)
+      locationLat = position.coords.latitude
+      locationLng = position.coords.longitude
+      console.log(locationLat);
+      console.log(locationLng);
+      
+    }, function () {
+        clearTimeout(geotimeout);
+    },{
+        enableHighAccuracy:true,
+        timeout: timeoutInSeconds*1000
+    });
+} 
 
   $.get('/user/profile/data',).then(userPreference => {
     console.log(userPreference);
