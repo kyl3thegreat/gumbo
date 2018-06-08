@@ -54,7 +54,17 @@ router.get('/matches', (req, res, next) => {
 
 // View the current users match history
 router.get('/notifications', (req, res, next) => {
-  res.render('notifications')
+  db.Request.findAll({where:{
+    UserId: req.user.id
+  }})
+  .then((pendingRequests) => {
+    db.Request.findAll({where:{
+      requestId: req.user.id
+    }})
+    .then((newRequests) => {      
+      res.render('notifications',{user: req.user, pendingRequests: pendingRequests, newRequests: newRequests})
+    })
+  })
 })
 
 
