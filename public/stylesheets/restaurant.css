@@ -14,6 +14,7 @@
 .matchContainer .profiles div {
     justify-content: space-around;
     margin: 0 45px;
+    text-align: center;
 }
 .matchContainer .profiles img {
     width: 80px;
@@ -35,10 +36,40 @@
 
 
 
+.matchContainer .restaurant{
+    padding: 20px 0;
+    width: fit-content;
+    margin: 0 auto; 
+}
 .matchContainer .restaurant .resName{
     font-size: 1.5em;
     font-size: 900;
+    text-align: center;
 }
 .matchContainer .restaurant p{
     font-size: 14px;
+}
+.matchContainer .restaurant p img{
+    margin-right: 4px;
+}
+
+
+
+/* Styles for Nav Bar */
+.top {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #1ea896;
+}
+#goBack {
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+}
+.top h4 {
+    color: #ffffff;
+    margin: 0;
+    line-height: 25px;
+    text-indent: -35px;
 }

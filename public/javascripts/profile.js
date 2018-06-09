@@ -1,7 +1,10 @@
 // When user clicks the edit button 
-$(".top").on("click", '#editsettings', (e)=> {
+$(".top").on("click", '.editSettings', (e)=> {
 
-        $('#editsettings').html('<img class="save" src="/images/tick-light.png" alt="" srcset=""  width="25" height="25" >')
+        e.preventDefault()
+
+        $('.editSettings').html('<img class="save" src="/images/tick-light.png" alt="" srcset=""  width="25" height="25" >')
+        $('.editSettings').removeClass()
         let company = $('.company p'),
         school = $('.school p'),
         bio = $('.bio p'),
@@ -24,7 +27,9 @@ $(".top").on("click", '#editsettings', (e)=> {
         $('.bottom ul').append('<li class="photo"><div class="form-group"><label class="col-sm-2 col-form-label col-form-label-sm" for="photo">Change Proifile Pic</label><input type="text" class="form-control" id="photoInput"></div></li>')
 })
 
-$('.top').on('click', '.save', () => {
+$('.top').on('click', '.save', (e) => {
+
+        e.preventDefault()
 
         let companyInput = $('#companyInput').val().trim(),
                 schoolInput = $('#schoolInput').val().trim(),

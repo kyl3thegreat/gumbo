@@ -73,7 +73,7 @@ $(document).ready(() => {
             
                     var request = {
                     location: pyrmont,
-                    radius: '500',
+                    radius: '32186',
                     query:  currentUser.DinnerPreference.cuisineType,
                     minPriceLevel: currentUser.DinnerPreference.pricePoint,
                     type: ['restaurant']
@@ -90,13 +90,22 @@ $(document).ready(() => {
                         restaurantLoc = {add: restaurant.formatted_address, lat:restaurant.geometry.location.lat(), lng:restaurant.geometry.location.lng()}
                         console.log(results.length);
                         console.log(restaurant.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100}));
+
+                        var rating = Math.round(restaurant.rating)
+                        console.log(rating);
                         
                         console.log(results)
                         $('.restaurant').append(
                             '<h1 class="resName">' + restaurant.name + '</h1>' + 
                             '<p class="resAddr">' + restaurant.formatted_address + '</p>' + 
-                            '<p class="resRating">Rating  ' + restaurant.rating + '</p>')
+                            '<p class="resRating"></p>')
                         console.log(restaurant)
+
+                        for (let i = 0; i < rating; i++) {
+
+                            $('.resRating').append('<img src="/images/star.png" width="20" height="20">')
+                            
+                        }
                         
                         createMarker(restaurant)
 

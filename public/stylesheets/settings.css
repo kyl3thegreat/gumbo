@@ -5,6 +5,10 @@ body {
   background-color: white;
 }
 
+.ui-slider-horizontal .ui-slider-handle {
+  top: -.15em;
+}
+
 h4 {
     font-family: 'Roboto', sans-serif;
     color: white;

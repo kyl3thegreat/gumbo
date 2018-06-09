@@ -146,7 +146,8 @@
         }
     
         .save {
-            transform: rotate(-40deg)
+            float: right;
+            margin-top: 14px;
         }
        
     

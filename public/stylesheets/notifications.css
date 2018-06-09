@@ -20,6 +20,25 @@
         }
 
 
+        /* Styles for Nav Bar */
+.top {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: #1ea896;
+}
+#goBack {
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+}
+.top h4 {
+    color: #ffffff;
+    margin: 0;
+    line-height: 25px;
+    text-indent: -35px;
+    display: inline-block;
+}
 
         
 .requests {

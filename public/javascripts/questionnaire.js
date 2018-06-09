@@ -151,7 +151,7 @@ function findMatches(users, currentUser){
         '<div class="top container-fluid bg-1">'+
             '<div class="row">'+
                 '<div class="col-xs-12">'+
-                    '<a href="/user/dashboard" class="previous-round">'+
+                    '<a id="goBack" href="/user/dashboard" class="previous-round">'+
                         '<img src="/images/back.png" width="25" height="25">'+
                     '</a>'+
                     '<h4>'+
