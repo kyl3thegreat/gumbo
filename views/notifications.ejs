@@ -31,7 +31,7 @@
 
 
         <div class="container-fluid">
-            <div class="row requests">
+            <div class="container requests">
                 <h5>Pending Requests
                     <span class="badge badge-light">
                         <%= pendingRequests.length %>
@@ -40,17 +40,40 @@
                 <br>
                 <% pendingRequests.forEach(request => { %>
                     <% if(request.dataValues.status == false){ %>
-                        <div class="col-xs-12 requestName">
-                            <p>
-                                <%= request.dataValues.recievingRequest %>
-                            </p>
+                    <div class="row">
+                        <div class="col-xs-6 requestName">
+                            <p><%= request.dataValues.recievingRequest %></p>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-6 requestActions">
+                            <button type="button" class="btn cancel">Cancel</button>
+                        </div>
+                    </div>
+                    <% } %>
+                <% }) %>
+            </div>
+
+            <div class="container requests">
+                <h5>New Requests
+                    <span class="badge badge-light">
+                        <%= newRequests.length %>
+                    </span>
+                </h5>
+                <br>
+                <% newRequests.forEach(request => { %>
+                    <% if(request.dataValues.status == false){ %>
+                    <div class="row">
+                        <div class="col-xs-6 requestName">
+                            <p><%= request.dataValues.makingRequest %></p>
+                        </div>
+                        <div class="col-xs-6 requestActions">
                             <button type="button" class="btn cancel">Cancel</button>
                             <button type="button" class="btn accept">Accept</button>
-            </div>
-            <% } %>
+                        </div>
+                    </div>
+                    <% } %>
                 <% }) %>
+            </div>
+
         </div>
 
 

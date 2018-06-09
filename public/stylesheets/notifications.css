@@ -29,6 +29,19 @@
     margin: 20px;
 
 }
+.requests .row {
+    margin-bottom: 15px;
+}
+.requestName {
+    
+}
+.requestName p {
+    line-height: 28px;
+    margin: 0;    
+}
+.requestActions {
+    text-align: center;
+}
 
 .cancel {
  background-color: #e84153; 
@@ -69,5 +82,4 @@ font-size: 16px;
 display: inline-block;
 
 }
-
 
