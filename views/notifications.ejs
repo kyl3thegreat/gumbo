@@ -30,19 +30,40 @@
 
     <div class="container requests">
             
-    <div class="row">
-        <h5>Pending Requests <span class="badge badge-light"><%= pendingRequests.length %></span></h5>
-        <% pendingRequests.forEach(request => { %>
-            <% if(request.dataValues.status == false){ %>
-                <div class="col">
-                    <h4><%= request.dataValues.recievingRequest %></h4>
-                </div>
-                
-                <div class="col col-lg-2">
-                    <button type="button" class="btn btn-danger">Cancel</button> 
-                </div>
-            <% } %>
-        <% }) %>
+        <div class="row">
+            <h5>Pending Requests <span class="badge badge-light"><%= pendingRequests.length %></span></h5>
+            <% pendingRequests.forEach(request => { %>
+                <% if(request.dataValues.status == false){ %>
+                    <div class="col">
+                        <h4><%= request.dataValues.recievingRequest %></h4>
+                    </div>
+                    
+                    <div class="col col-lg-2">
+                        <button type="button" class="btn btn-danger">Cancel</button> 
+                    </div>
+                <% } %>
+            <% }) %>
+        </div>
+
+
+        <div class="row">
+            <h5>New Requests <span class="badge badge-light"><%= newRequests.length %></span></h5>
+            <% newRequests.forEach(request => { %>
+                <% if(request.dataValues.status == false){ %>
+                    <div class="col">
+                        <h4><%= request.dataValues.makingRequest %></h4>
+                    </div>
+                    
+                    <div class="col col-lg-2">
+                        <button type="button" class="btn btn-success">Accept</button> 
+                    </div>
+                    <div class="col col-lg-2">
+                        <button type="button" class="btn btn-danger">Cancel</button> 
+                    </div>
+                <% } %>
+            <% }) %>
+        </div>
+    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
