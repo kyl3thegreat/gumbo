@@ -3,10 +3,6 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        p {
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-        }
 
         .bg-1 {
             background-color: #1ea896;
@@ -23,67 +19,55 @@
             color: #555555;
         }
 
-        .container-fluid {
-            padding-top: 8px;
-            padding-bottom: 3px;
-        }
-
-        #thumbnaildiv{
-            position: relative;
-            width: 80px;
-            height: 80px;
-            overflow: hidden;
-            border-radius: 50%;
-            margin: 0 auto;
-          }
-
-          
-          .profilethumbnail{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-
-        a {
-            color: #1ea896;
-            font-weight: grow;
-
-        }
 
 
-        a:hover {
-            text-decoration: none;
-        }
-
-
-        .container {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-img img {
-            width: 100%;
-        }
-
-        .requests {
-            margin: 50px 25px;
-            padding: 10px 0;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-        }
-        .requests .row {
-            width: 100%;
-            text-align: center
-        }
-
-        .requests .row div {
-            display: inline-block;
-        }
-        .requests .row h4 {
-            margin-right: 45px
-        }
         
+.requests {
+    background-color: #ffffff;
+    max-width: 100%;
+    padding: 20px 0;
+    margin: 20px;
+
+}
+
+.cancel {
+ background-color: #e84153; 
+ border: 1px solid white;
+ color: white;
+ font-size: 10px;
+ display: inline-block;
+}
+
+.cancel:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.accept {
+    background-color: #1ea896; 
+    border: 1px solid white;
+    color: white;
+    font-size: 10px;
+    display: inline-block;
+   }
+
+   .accept:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.badge {
+    background-color: #e84153;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+p {
+font-size: 16px;
+display: inline-block;
+
+}
 
 
