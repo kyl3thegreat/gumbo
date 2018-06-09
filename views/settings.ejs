@@ -11,20 +11,20 @@
 </head>
 <body>
         <div class="top container-fluid bg-1">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <a id="goBack" href="/user/dashboard" class="previous-round">
-                            <img src="/images/back.png" width="25" height="25">
-                        </a>
-                        <h4>
-                            <center>Settings</center>
-                        </h4>
-                        <a id="saveSettings" href="#" class="done">
-                            <img src="/images/tick-light.png" width="25" height="25">
-                        </a>
-                    </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a id="goBack" href="/user/dashboard" class="previous-round">
+                        <img src="/images/back.png" width="25" height="25">
+                    </a>
+                    <h4>
+                        <center>Settings</center>
+                    </h4>
+                    <a id="saveSettings" href="#" class="done">
+                        <img src="/images/tick-light.png" width="25" height="25">
+                    </a>
                 </div>
             </div>
+        </div>
 
     <div class="row accountSettings">
         <div class="col-sm-12">
@@ -54,7 +54,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="col-sm-12">
-                        <h5 class="card-title">Gender</h5>              
+                        <h5 class="card-title">Gender Preference</h5>              
                         
                         <% if(user.UserPreference.gender){%>
                             <a href="#" id="gender" class="genderPrefToggle alert-link"><%= user.UserPreference.gender%></a>
