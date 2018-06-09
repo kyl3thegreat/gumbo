@@ -5,14 +5,14 @@
 Gumbo is a mobile app designed by the 2018 UCF Coding and Web Development Bootcamp.  
 
 It utlizes: 
-    * HTML
-    * CSS
-    * Javascript
-    * JQuery
-    * MYSQL
-    * .ejs
-    * Node
-    * Nodemon
+* HTML
+* CSS
+* Javascript
+* JQuery
+* MYSQL
+* .ejs
+* Node
+* Nodemon
 
 **Mission Statement:**
     Gumbo is a mobile app that helps singles step outside their comfort zone and build meaningful connections with people in their immediate area through food.  
